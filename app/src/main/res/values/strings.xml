@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">MobileBuyerGuide</string>
+
+    <!--item_mobile_list-->
+    <string name="item_mobile_price">Price:</string>
+    <string name="item_mobile_rating">Rating:</string>
+
+    <!--fragment tab-->
+    <string name="tab_favorite_list">MOBILE LIST</string>
+    <string name="tab_mobile_list">FAVORITE LIST</string>
 </resources>

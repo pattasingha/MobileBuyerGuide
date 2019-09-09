@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              xmlns:app="http://schemas.android.com/apk/res-auto"
+              xmlns:tools="http://schemas.android.com/tools"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+
+    <androidx.cardview.widget.CardView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            app:cardCornerRadius="4dp"
+            app:cardElevation="2sp"
+            app:cardUseCompatPadding="true">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/default_margin">
+
+            <ImageView
+                    android:id="@+id/item_thumbImage"
+                    android:layout_width="@dimen/image_item_mobile_width"
+                    android:layout_height="@dimen/image_item_mobile_height"
+                    tools:ignore="ContentDescription"/>
+
+            <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical">
+
+                <RelativeLayout
+                        android:id="@+id/item_detail_top"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content">
+
+                    <TextView
+                            android:id="@+id/item_name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_margin"
+                            android:layout_marginRight="@dimen/default_margin"
+                            tools:ignore="RelativeOverlap"
+                            tools:text="blah blah"/>
+
+                    <ToggleButton
+                            android:id="@+id/item_fav"
+                            android:layout_width="@dimen/toggle_button_item_mobile"
+                            android:layout_height="@dimen/toggle_button_item_mobile"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="@dimen/default_margin"
+                            android:layout_marginRight="@dimen/default_margin"
+                            android:src="@mipmap/ic_button_not_fav"/>
+
+                </RelativeLayout>
+
+                <TextView
+                        android:id="@+id/item_description"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/item_mobile_description"
+                        android:layout_below="@+id/item_detail_top"
+                        android:layout_margin="@dimen/default_margin"
+                        android:ellipsize="end"
+                        android:maxLines="2"/>
+
+                <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_below="@+id/item_description">
+
+                    <TextView
+                            android:id="@+id/item_tag_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginLeft="@dimen/default_margin"
+                            android:layout_marginRight="@dimen/default_margin"
+                            android:text="@string/item_mobile_price"/>
+
+                    <TextView
+                            android:id="@+id/item_price"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_toEndOf="@+id/item_tag_price"
+                            android:layout_toRightOf="@+id/item_tag_price"
+                            tools:text="blah blah"/>
+
+                    <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginEnd="@dimen/default_margin"
+                            android:layout_marginRight="@dimen/default_margin"
+                            android:layout_toStartOf="@+id/item_rating"
+                            android:layout_toLeftOf="@+id/item_rating"
+                            android:text="@string/item_mobile_rating"
+                            tools:ignore="RelativeOverlap"/>
+
+                    <TextView
+                            android:id="@+id/item_rating"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_alignParentEnd="true"
+                            android:layout_alignParentRight="true"
+                            android:layout_marginEnd="@dimen/default_margin"
+                            android:layout_marginRight="@dimen/default_margin"
+                            tools:text="blah blah"/>
+
+                </RelativeLayout>
+
+            </RelativeLayout>
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
+</LinearLayout>
