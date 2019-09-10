@@ -37,13 +37,11 @@ class MobileListFragment : Fragment(), MobileListContract.MobileListView {
         super.onViewCreated(view, savedInstanceState)
         recyclerMobileList = view.findViewById(R.id.rv_mobile_list)
         mobileListPresenter.getMobileList()
-//        setAdapter()
+        setAdapter()
     }
 
     override fun showMobileList(mobileList: List<MobileItemDisplay>) {
         this.mobileListDisplay = mobileList as ArrayList<MobileItemDisplay>
-        Log.d("FRAGMENT", mobileListDisplay.toString())
-        setAdapter()
         this.adapter.setData(mobileList)
     }
 

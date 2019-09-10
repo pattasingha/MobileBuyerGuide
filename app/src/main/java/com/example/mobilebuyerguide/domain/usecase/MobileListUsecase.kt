@@ -4,29 +4,37 @@ import android.util.Log
 import com.example.mobilebuyerguide.data.dataSource.DataSource
 import com.example.mobilebuyerguide.data.entity.Mobile
 import com.example.mobilebuyerguide.data.repository.MobileRepository
+import com.example.mobilebuyerguide.domain.contract.CallBackInterface
 import com.example.mobilebuyerguide.domain.contract.MobileListDomainContract
+import io.reactivex.Observable
 
-class MobileListUsecase: DataSource {
+class MobileListUsecase: CallBackInterface {
 
     private val mobileRepository = MobileRepository()
+    private lateinit var mobileObservable: Observable<List<Mobile>>
     private lateinit var mobileListContract: MobileListDomainContract
     private lateinit var mobileList: List<Mobile>
 
-    init {
-        mobileRepository.setDataSource(this)
+    override fun callBackResponse(): Observable<List<Mobile>> {
+        mobileObservable = mobileRepository.getMobileListObservable()
+        return mobileObservable
     }
 
-    override fun sendMobileList(mobileList: List<Mobile>) {
-        this.mobileList = mobileList
-        mobileListContract.sendMobileList(mobileList)
-        Log.d("usecase", mobileList.toString())
-    }
-
-    fun getMobileList() {
-        mobileRepository.getMobileList()
-    }
-
-    fun setMobileListContract(mobileListContract: MobileListDomainContract) {
-        this.mobileListContract = mobileListContract
-    }
+//    init {
+//        mobileRepository.setDataSource(this)
+//    }
+//
+//    override fun sendMobileList(mobileList: List<Mobile>) {
+//        this.mobileList = mobileList
+//        mobileListContract.sendMobileList(mobileList)
+//        Log.d("usecase", mobileList.toString())
+//    }
+//
+//    fun getMobileList() {
+//        mobileRepository.getMobileList()
+//    }
+//
+//    fun setMobileListContract(mobileListContract: MobileListDomainContract) {
+//        this.mobileListContract = mobileListContract
+//    }
 }
