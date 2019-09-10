@@ -5,10 +5,10 @@
              android:layout_height="match_parent"
              tools:context=".view.fragment.MobileListFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_mobile_list"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:text="MOBILE"/>
-
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/item_mobile_list">
+    </androidx.recyclerview.widget.RecyclerView>
 </FrameLayout>

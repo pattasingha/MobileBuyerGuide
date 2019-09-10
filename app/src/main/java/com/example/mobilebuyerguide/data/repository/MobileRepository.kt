@@ -1,5 +1,6 @@
 package com.example.mobilebuyerguide.data.repository
 
+import android.util.Log
 import com.example.mobilebuyerguide.data.dataSource.DataSource
 import com.example.mobilebuyerguide.data.entity.Mobile
 import com.example.mobilebuyerguide.data.network.Api
@@ -18,7 +19,7 @@ class MobileRepository {
             override fun onFailure(call: Call<List<Mobile>>, t: Throwable) {}
 
             override fun onResponse(call: Call<List<Mobile>>, response: Response<List<Mobile>>) {
-                dataSource.sendMobileList(response.body())
+                dataSource.sendMobileList(response.body()!!)
             }
         })
     }

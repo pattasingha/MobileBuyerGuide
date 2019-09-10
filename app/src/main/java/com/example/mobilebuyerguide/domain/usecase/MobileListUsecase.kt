@@ -1,19 +1,32 @@
 package com.example.mobilebuyerguide.domain.usecase
 
+import android.util.Log
 import com.example.mobilebuyerguide.data.dataSource.DataSource
 import com.example.mobilebuyerguide.data.entity.Mobile
 import com.example.mobilebuyerguide.data.repository.MobileRepository
+import com.example.mobilebuyerguide.domain.contract.MobileListDomainContract
 
 class MobileListUsecase: DataSource {
-    private val mobileRepoeitory = MobileRepository()
+
+    private val mobileRepository = MobileRepository()
+    private lateinit var mobileListContract: MobileListDomainContract
+    private lateinit var mobileList: List<Mobile>
+
     init {
-        mobileRepoeitory.setDataSource(this)
+        mobileRepository.setDataSource(this)
     }
 
-    override fun sendMobileList(mobile: List<Mobile>?) {
-
+    override fun sendMobileList(mobileList: List<Mobile>) {
+        this.mobileList = mobileList
+        mobileListContract.sendMobileList(mobileList)
+        Log.d("usecase", mobileList.toString())
     }
 
+    fun getMobileList() {
+        mobileRepository.getMobileList()
+    }
 
-
+    fun setMobileListContract(mobileListContract: MobileListDomainContract) {
+        this.mobileListContract = mobileListContract
+    }
 }

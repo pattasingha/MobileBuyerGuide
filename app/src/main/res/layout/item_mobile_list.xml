@@ -4,10 +4,10 @@
               xmlns:tools="http://schemas.android.com/tools"
               android:orientation="vertical"
               android:layout_width="match_parent"
-              android:layout_height="match_parent">
+              android:layout_height="wrap_content">
 
     <androidx.cardview.widget.CardView
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             app:cardCornerRadius="4dp"
@@ -44,15 +44,15 @@
                             tools:ignore="RelativeOverlap"
                             tools:text="blah blah"/>
 
-                    <ToggleButton
+                    <Button
                             android:id="@+id/item_fav"
+                            android:background="@mipmap/ic_button_not_fav"
                             android:layout_width="@dimen/toggle_button_item_mobile"
                             android:layout_height="@dimen/toggle_button_item_mobile"
                             android:layout_alignParentEnd="true"
                             android:layout_alignParentRight="true"
                             android:layout_marginEnd="@dimen/default_margin"
-                            android:layout_marginRight="@dimen/default_margin"
-                            android:src="@mipmap/ic_button_not_fav"/>
+                            android:layout_marginRight="@dimen/default_margin"/>
 
                 </RelativeLayout>
 

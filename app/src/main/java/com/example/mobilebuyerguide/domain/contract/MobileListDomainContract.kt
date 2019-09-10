@@ -1,7 +1,7 @@
-package com.example.mobilebuyerguide.data.dataSource
+package com.example.mobilebuyerguide.domain.contract
 
 import com.example.mobilebuyerguide.data.entity.Mobile
 
-interface DataSource {
+interface MobileListDomainContract {
     fun sendMobileList(mobileList: List<Mobile>)
 }
