@@ -6,7 +6,7 @@ import io.reactivex.Observable
 
 interface MobileListContract {
     interface MobileListPresenter {
-        fun getMobileList(): Observable<List<Mobile>>
+        fun getMobileList()
     }
 
     interface MobileListView {

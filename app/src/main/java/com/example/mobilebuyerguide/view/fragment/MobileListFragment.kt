@@ -18,15 +18,11 @@ import com.example.mobilebuyerguide.view.adapter.MobileListAdapter
 
 class MobileListFragment : Fragment(), MobileListContract.MobileListView {
 
-    private var mobileListPresenter = MobileListPresenter()
+    private var mobileListPresenter = MobileListPresenter(this)
 
     private lateinit var mobileListDisplay: ArrayList<MobileItemDisplay>
     private lateinit var adapter: MobileListAdapter
     private lateinit var recyclerMobileList: RecyclerView
-
-    init {
-        mobileListPresenter.setMobileListContractView(this)
-    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?): View? {
@@ -43,6 +39,7 @@ class MobileListFragment : Fragment(), MobileListContract.MobileListView {
     override fun showMobileList(mobileList: List<MobileItemDisplay>) {
         this.mobileListDisplay = mobileList as ArrayList<MobileItemDisplay>
         this.adapter.setData(mobileList)
+        Log.d("FRAGMENT", mobileList.toString())
     }
 
     private fun setAdapter() {
