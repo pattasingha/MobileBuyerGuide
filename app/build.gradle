@@ -41,11 +41,6 @@ dependencies {
     implementation 'com.google.dagger:dagger:2.21'
     kapt 'com.google.dagger:dagger-compiler:2.21'
 
-    // Dagger 2 For Android
-    implementation 'com.google.dagger:dagger-android:2.16'
-    implementation 'com.google.dagger:dagger-android-support:2.16'
-    kapt 'com.google.dagger:dagger-android-processor:2.16'
-
     // Rx
     implementation 'io.reactivex.rxjava2:rxandroid:2.1.1'
     implementation 'io.reactivex.rxjava2:rxjava:2.2.12'
@@ -57,4 +52,18 @@ dependencies {
 
     //Glide
     implementation "com.github.bumptech.glide:glide:4.9.0"
+
+    //Dagger
+    implementation 'com.google.dagger:dagger:2.21'
+    kapt 'com.google.dagger:dagger-compiler:2.21'
+
+    implementation('com.google.dagger:dagger-android:2.21') {
+        exclude group: "com.android.support"
+    }
+    implementation('com.google.dagger:dagger-android-support:2.21') {
+        exclude group: "com.android.support"
+    }
+    kapt('com.google.dagger:dagger-android-processor:2.21') {
+        exclude group: "com.android.support"
+    }
 }

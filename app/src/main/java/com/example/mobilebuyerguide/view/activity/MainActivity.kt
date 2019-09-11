@@ -7,7 +7,7 @@ import com.example.mobilebuyerguide.data.repository.MobileRepository
 import com.example.mobilebuyerguide.view.adapter.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : BaseActivity() {
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -3,7 +3,6 @@ package com.example.mobilebuyerguide.view.fragment
 
 import android.os.Bundle
 import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +15,7 @@ import com.example.mobilebuyerguide.presentation.display.MobileItemDisplay
 import com.example.mobilebuyerguide.presentation.presenter.MobileListPresenter
 import com.example.mobilebuyerguide.view.adapter.MobileListAdapter
 
-class MobileListFragment : Fragment(), MobileListContract.MobileListView {
+class MobileListFragment : BaseFragment(), MobileListContract.MobileListView {
 
     private var mobileListPresenter = MobileListPresenter(this)
 
