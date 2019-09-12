@@ -6,9 +6,9 @@ import com.example.mobilebuyerguide.R
 import com.example.mobilebuyerguide.data.repository.MobileRepository
 import com.example.mobilebuyerguide.view.adapter.TabAdapter
 import kotlinx.android.synthetic.main.activity_main.*
+import javax.inject.Inject
 
 class MainActivity : BaseActivity() {
-
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

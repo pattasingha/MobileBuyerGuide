@@ -14,23 +14,28 @@ import com.example.mobilebuyerguide.presentation.contract.MobileListContract
 import com.example.mobilebuyerguide.presentation.display.MobileItemDisplay
 import com.example.mobilebuyerguide.presentation.presenter.MobileListPresenter
 import com.example.mobilebuyerguide.view.adapter.MobileListAdapter
+import javax.inject.Inject
 
 class MobileListFragment : BaseFragment(), MobileListContract.MobileListView {
 
-    private var mobileListPresenter = MobileListPresenter(this)
+    @Inject
+    lateinit var mobileListPresenter: MobileListPresenter
 
     private lateinit var mobileListDisplay: ArrayList<MobileItemDisplay>
     private lateinit var adapter: MobileListAdapter
     private lateinit var recyclerMobileList: RecyclerView
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?): View? {
+    override fun onCreateView(
+        inflater: LayoutInflater, container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
         return inflater.inflate(R.layout.fragment_mobile_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         recyclerMobileList = view.findViewById(R.id.rv_mobile_list)
+        mobileListPresenter.setView(this)
         mobileListPresenter.getMobileList()
         setAdapter()
     }

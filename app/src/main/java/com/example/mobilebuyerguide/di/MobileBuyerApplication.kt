@@ -9,6 +9,7 @@ import dagger.android.HasActivityInjector
 import dagger.android.support.HasSupportFragmentInjector
 import javax.inject.Inject
 
+
 class MobileBuyerApplication: Application(), HasActivityInjector, HasSupportFragmentInjector {
 
     @Inject
@@ -18,6 +19,7 @@ class MobileBuyerApplication: Application(), HasActivityInjector, HasSupportFrag
     lateinit var fragmentDispatchingAndroidInjector: DispatchingAndroidInjector<Fragment>
 
     override fun activityInjector(): AndroidInjector<Activity> = activityDispatchingAndroidInjector
+    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentDispatchingAndroidInjector
 
     override fun onCreate() {
         super.onCreate()
@@ -28,6 +30,4 @@ class MobileBuyerApplication: Application(), HasActivityInjector, HasSupportFrag
             .build()
             .inject(this)
     }
-
-    override fun supportFragmentInjector(): AndroidInjector<Fragment> = fragmentDispatchingAndroidInjector
 }

@@ -1,4 +1,4 @@
-package com.example.mobilebuyerguide.di
+package com.example.mobilebuyerguide.di.module
 
 import com.example.mobilebuyerguide.data.network.Api
 import com.example.mobilebuyerguide.data.repository.MobileRepository

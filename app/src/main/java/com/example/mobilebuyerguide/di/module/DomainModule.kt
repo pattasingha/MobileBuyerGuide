@@ -1,4 +1,4 @@
-package com.example.mobilebuyerguide.di
+package com.example.mobilebuyerguide.di.module
 
 import com.example.mobilebuyerguide.data.repository.MobileRepository
 import com.example.mobilebuyerguide.domain.usecase.MobileListUseCase

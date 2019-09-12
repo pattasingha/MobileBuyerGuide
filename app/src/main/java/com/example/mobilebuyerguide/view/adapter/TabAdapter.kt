@@ -8,8 +8,8 @@ import com.example.mobilebuyerguide.R
 import com.example.mobilebuyerguide.view.fragment.FavoriteListFragment
 import com.example.mobilebuyerguide.view.fragment.MobileListFragment
 
-class TabAdapter(private val context: Context, fm: FragmentManager)
-    : FragmentPagerAdapter(fm) {
+class TabAdapter(private val context: Context, fm: FragmentManager) : FragmentPagerAdapter(fm) {
+
     private val pages = 2
     private val mobileListFragment = MobileListFragment()
     private val favoriteListFragment = FavoriteListFragment()

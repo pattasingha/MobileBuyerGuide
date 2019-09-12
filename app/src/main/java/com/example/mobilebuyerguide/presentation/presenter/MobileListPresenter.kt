@@ -9,12 +9,17 @@ import com.example.mobilebuyerguide.presentation.display.MobileItemDisplay
 import com.example.mobilebuyerguide.presentation.mapper.MobileItemMapper
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.schedulers.Schedulers
+import javax.inject.Inject
 
-class MobileListPresenter(private val view: MobileListContract.MobileListView) :
+class MobileListPresenter @Inject constructor(private var useCase: MobileListUseCase) :
     MobileListContract.MobileListPresenter {
 
-    private val useCase = MobileListUseCase()
+    private lateinit var view: MobileListContract.MobileListView
     private lateinit var mobileListDisplay: List<MobileItemDisplay>
+
+    fun setView(view: MobileListContract.MobileListView){
+        this.view = view
+    }
 
     @SuppressLint("CheckResult")
     override fun getMobileList() {

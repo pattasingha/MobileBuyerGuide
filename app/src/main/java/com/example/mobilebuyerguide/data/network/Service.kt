@@ -8,6 +8,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface Service {
+
     @GET("/api/mobiles/")
     fun getMobileList(): Observable<List<Mobile>>
 

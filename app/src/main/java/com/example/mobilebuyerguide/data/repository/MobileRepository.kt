@@ -3,15 +3,13 @@ package com.example.mobilebuyerguide.data.repository
 import com.example.mobilebuyerguide.data.entity.Mobile
 import com.example.mobilebuyerguide.data.network.Api
 import io.reactivex.Observable
+import javax.inject.Inject
 
+class MobileRepository @Inject constructor(private var api: Api) {
 
-class MobileRepository {
-
-    private val service = Api.api
-    private lateinit var mobileObservable: Observable<List<Mobile>>
+    private val service = api.getService()
 
     fun getMobileListObservable(): Observable<List<Mobile>> {
-        mobileObservable = service.getMobileList()
-        return mobileObservable
+        return service.getMobileList()
     }
 }

@@ -1,6 +1,6 @@
 package com.example.mobilebuyerguide.presentation.display
 
-data class MobileItemDisplay (
+data class MobileItemDisplay(
     val name: String,
     val description: String,
     val price: Double,
